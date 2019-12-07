@@ -2,6 +2,8 @@
 #include<main.hpp>
 #include<swoosh.hpp>
 #include<test.hpp>
+#include<fstream>
+
 
 using std::cout;
 int main()
@@ -13,6 +15,9 @@ int main()
     cout<<"Hello World\n";
     cout<<"Square of 6 is :"<<square(6)<<std::endl;
     cout<<"Cube of 6 is :"<<cube(6)<<std::endl;
+
+    std::fstream f("res.txt");
+    cout<<f.rdbuf()<<std::endl;
     return 0;
 
 }

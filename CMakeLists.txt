@@ -27,6 +27,9 @@ add_subdirectory(libmath)
 #go build project hurricane after this 
 add_subdirectory(hurricane)
 
+
+FILE(COPY externals/res.txt DESTINATION "${CMAKE_CURRENT_SOURCE_DIR}/build")
+
 #creating target executable and adding required source files for it
 add_executable(Main ${source}/main.cpp)
 target_link_libraries(Main PRIVATE libmath hurricane)
