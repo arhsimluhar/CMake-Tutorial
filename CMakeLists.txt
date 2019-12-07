@@ -27,11 +27,17 @@ add_subdirectory(libmath)
 #go build project hurricane after this 
 add_subdirectory(hurricane)
 
-
+#Copy the runtime resources (such as DLLs , game-assets and text files)
+#instead of path you can use Release/Debug, so if the folder doesnt exists
+#it will create  build/Release folder and copy the file there.
 FILE(COPY externals/res.txt DESTINATION "${CMAKE_CURRENT_SOURCE_DIR}/build")
+
 
 #creating target executable and adding required source files for it
 add_executable(Main ${source}/main.cpp)
+
+
+
 target_link_libraries(Main PRIVATE libmath hurricane)
 target_include_directories(Main PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/include")
 
