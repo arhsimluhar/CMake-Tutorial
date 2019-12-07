@@ -24,9 +24,12 @@ message( STATUS "Building the libmath project")
 #go build project inside libmath first as our Main project depends on it 
 add_subdirectory(libmath)
 
+#go build project hurricane after this 
+add_subdirectory(hurricane)
+
 #creating target executable and adding required source files for it
 add_executable(Main ${source}/main.cpp)
-target_link_libraries(Main PRIVATE libmath)
+target_link_libraries(Main PRIVATE libmath hurricane)
 target_include_directories(Main PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/include")
 
 
