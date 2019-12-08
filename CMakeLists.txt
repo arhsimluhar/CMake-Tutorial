@@ -206,3 +206,15 @@ sum(value 4 5)
 message(STATUS "sum of the numbers after addtion : ${value}")
 
 
+message("*********************************")
+#Top level source directory (folder containing top level cmake file)
+message("CMAKE_SOURCE_DIR : ${CMAKE_SOURCE_DIR}")
+#Top level build directory (path to top build folder)
+message("CMAKE_BINARY_DIR : ${CMAKE_BINARY_DIR}")
+message("*********************************")
+
+#copy file and modify it contents
+configure_file(
+    "${PROJECT_SOURCE_DIR}/LICENSE"
+    "${CMAKE_BINARY_DIR}/moved-LICENSE"
+)

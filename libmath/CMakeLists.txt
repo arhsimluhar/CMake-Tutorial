@@ -9,3 +9,14 @@ add_library(libmath  "${CMAKE_CURRENT_SOURCE_DIR}/src/swoosh.cpp" "${CMAKE_CURRE
 target_include_directories(libmath PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")
 
 
+message("**************************")
+#PROJECT_SOURCE_DIR (source directory of most recent project() command)
+message("PROJECT_SOURCE_DIR ${PROJECT_SOURCE_DIR}")
+
+#Current folder in build directory
+message("CMAKE_CURRENT_BINARY_DIR ${CMAKE_CURRENT_BINARY_DIR}")
+
+#Current source directory(level at which current cmake file is present)
+message("CMAKE_CURRENT_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}")
+message("**************************")
+
