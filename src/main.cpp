@@ -5,6 +5,7 @@
 #include<fstream>
 
 
+
 using std::cout;
 int main()
 {
@@ -18,6 +19,11 @@ int main()
 
     std::fstream f("res.txt");
     cout<<f.rdbuf()<<std::endl;
+    #ifdef FOO
+    cout<<"FOO is defined in the code"<<std::endl;
+    cout<<"Value of BAR: "<<BAR<<std::endl;
+    #endif
+
     return 0;
 
 }

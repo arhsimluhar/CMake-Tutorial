@@ -1,6 +1,27 @@
 #define the minimum required version for cmake
 cmake_minimum_required( VERSION 3.12)
 
+#setting C++ version and other settings
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+
+#Writing platform specific blocks 
+
+IF(WIN32)
+    message("Windows Operating System")
+ELSEIF(APPLE)
+    message("Apple MacOS")
+ELSEIF(UNIX)
+    message("Linux Operating system")
+    add_definitions(-DFOO)
+    add_definitions(-DBAR=\"BAR\")
+ENDIF()
+
+
+
+
 #Set Global Property
 set_property(GLOBAL PROPERTY fancy "LINUX")
 
@@ -15,6 +36,8 @@ message(STATUS "GLOBAL variable: ${var}")
 
 #Set Project Name and Version 
 project(Main VERSION 0.1)
+
+
 
 
 #Setting Author Variable to String "Rahul Mishra"
@@ -182,14 +205,4 @@ endfunction()
 sum(value 4 5)
 message(STATUS "sum of the numbers after addtion : ${value}")
 
-
-#Writing platform specific blocks 
-
-IF(WIN32)
-    message("Windows Operating System")
-ELSEIF(APPLE)
-    message("Apple MacOS")
-ELSEIF(UNIX)
-    message("Linux Operating system")
-ENDIF()
 
