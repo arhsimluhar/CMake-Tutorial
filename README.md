@@ -10,3 +10,4 @@ Learn how to build cross-platform applications using CMake
     - PUBLIC means that folder is included in both child and parent scope.
     - INTERFACE means that folder is included in only the parent scope and not it child scope.
 
+- Working with DLLs often requires platform specific actions, which CMake support using the built-in variables **WIN32**, **APPLE** and **UNIX**.

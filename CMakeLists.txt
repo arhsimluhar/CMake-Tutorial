@@ -21,8 +21,15 @@ project(Main VERSION 0.1)
 set(AUTHOR "RAHUL MISHRA")
 
 message( STATUS "Building the libmath project")
+
+#setting header file and statically and dynamically linked libraries that can be included to compile executables and libraries
+set (fooinclude "/usr/local/include/" CACHE PATH "path of fooheader")
+set (foolib "/usr/local/lib/test.a" CACHE FILEPATH "PATH TO statically linked library FOO")
+set (foodll "/usr/local/lib/test.so" CACHE FILEPATH "Path to DLL Foo")
+
 #go build project inside libmath first as our Main project depends on it 
 add_subdirectory(libmath)
+
 
 #go build project hurricane after this 
 add_subdirectory(hurricane)
@@ -176,6 +183,13 @@ sum(value 4 5)
 message(STATUS "sum of the numbers after addtion : ${value}")
 
 
+#Writing platform specific blocks 
 
-
+IF(WIN32)
+    message("Windows Operating System")
+ELSEIF(APPLE)
+    message("Apple MacOS")
+ELSEIF(UNIX)
+    message("Linux Operating system")
+ENDIF()
 
